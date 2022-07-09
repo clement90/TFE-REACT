@@ -1,0 +1,19 @@
+import React from "react";
+import { useMatch, Link, Route } from 'react-router-dom';
+
+
+
+
+const Card = ({groupe}) => {    
+    console.log(groupe);
+    return (
+        <div className="groupe">
+            
+         {/*   {groupe.attributes.name} */}
+              
+            
+        </div>
+    );
+};
+
+export default Card;

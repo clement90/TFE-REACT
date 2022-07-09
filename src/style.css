@@ -1,0 +1,543 @@
+        /* COLOR
+#00515C
+#74A2A8
+#1893A3
+
+
+
+*/
+        
+         :root {
+            --dark-blue: #00515C;
+            --gradient: linear-gradient(180deg, rgba(24, 147, 163, 1) 5%, rgba(0, 81, 92, 1) 95%);
+            /* rgb(16, 46, 85) */
+            --white: #faf0e6;
+            --link: #1893A3;
+            --beige: #a68a74;
+            --back-light: #ADF5FF;
+            /* --beige: #E8CEE4; */
+            /* #74A2A8; */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: var(--dark-blue);
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        code {
+            font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+        }
+        
+        .title {
+            color: white;
+            /* text-shadow: #1893A3 2px 2px 10px; */
+            text-shadow: black 2px 2px 10px;
+        }
+        
+        .navigation {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        
+        .navigation>a {
+            text-decoration: none;
+            margin: 15px;
+            padding-bottom: 2px;
+            /* color: white; */
+            font-weight: 500;
+        }
+        
+        .navigation>a:hover {
+            /* text-decoration: underline; */
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--dark-blue);
+            background: linear-gradient(180deg, rgba(24, 147, 163, 1) 5%, rgba(0, 81, 92, 1) 95%);
+        }
+        
+        .home {
+            border-radius: 20px;
+            width: 80%;
+            margin: auto;
+            margin-bottom: 10px;
+            padding: 15px;
+            background-color: rgb(240, 249, 255);
+            box-shadow: 1px 1px 2px rgb(22, 152, 161);
+        }
+        
+        h1 {
+            margin: 20px;
+            font-size: 50px;
+            /* text-decoration: underline; */
+        }
+        
+        .artist {
+            /* border: solid black 2px; */
+            border-radius: 20px;
+            width: 80%;
+            margin: auto;
+            margin-bottom: 10px;
+            padding-top: 15px;
+            background-color: rgb(240, 249, 255);
+            box-shadow: 1px 1px 2px rgb(22, 152, 161);
+        }
+        
+        .guitare {
+            border-radius: 20px;
+            width: 40%;
+            margin: auto;
+            margin-bottom: 10px;
+            padding: 15px;
+            background-color: #74A2A8;
+            /* rgb(240, 249, 255) */
+            box-shadow: 1px 1px 2px rgb(22, 152, 161);
+        }
+        /* .guitare a {
+        text-decoration: none;
+    } */
+        
+        .lienGuitare {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .blocGuitar {
+            margin-top: 30px;
+        }
+        
+        .artist>a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .selected {
+            /* color: rgb(183, 210, 235); */
+            color: var(--back-light);
+            /* border-bottom: solid rgb(177, 208, 236) 2px; */
+            border-bottom: solid var(--back-light) 2px;
+        }
+        
+        .notselected {
+            color: white;
+        }
+        
+        .description {
+            width: 60%;
+            margin: auto;
+            margin-top: 25px;
+            /* border: solid black 2px; */
+            border-radius: 20px;
+            padding: 25px;
+            background-color: rgb(232, 246, 247);
+            text-align: left;
+            /* box-shadow: 1px 1px 5px rgb(22, 152, 161); */
+        }
+        
+        .listShowArtist {
+            list-style: none;
+        }
+        
+        .listShowArtist a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        .showArtistGroup a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .classBoutton {
+            text-decoration: none;
+            color: white;
+            background-color: var(--dark-blue);
+            padding: 15px;
+            border-color: var(--dark-blue);
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 1px 1px 5px rgb(22, 152, 161);
+            margin: 10px;
+            cursor: grab;
+        }
+        
+        .updateGuitare {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 1px 1px 5px rgb(22, 152, 161);
+            margin: auto;
+            background-color: rgb(232, 246, 247);
+            margin-top: 25px;
+            text-align: left;
+        }
+        
+        .updateGuitare input {
+            text-align: center;
+            margin: 5px;
+            background-color: var(--dark-blue);
+            color: rgb(183, 210, 235);
+        }
+        
+        .updateGuitare select {
+            text-align: center;
+            margin: 5px;
+            background-color: var(--dark-blue);
+            color: rgb(183, 210, 235);
+        }
+        
+        .bouttonAjouter {
+            text-decoration: none;
+            color: white;
+            background-color: var(--dark-blue);
+            padding: 15px;
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 1px 1px 5px rgb(22, 152, 161);
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .footer {
+            /* margin-top: 30px; */
+            padding: 35px;
+            align-items: center;
+            background-color: var(--dark-blue);
+            background: linear-gradient(180deg, rgba(0, 81, 92, 1) 5%, rgba(0, 81, 92, 1) 5%, rgba(24, 147, 163, 1) 95%);
+            ;
+            color: white;
+        }
+        
+        .footer-container {
+            margin-top: 60px;
+        }
+        
+        .song {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+            /* border: solid black 2px; */
+            border-radius: 20px;
+            padding: 5px;
+            text-align: left;
+            /* box-shadow: 1px 1px 5px rgb(22, 152, 161); */
+        }
+        
+        .listSong {
+            color: white;
+            width: 30%;
+            list-style: none;
+            align-items: center;
+            margin: auto;
+            margin-top: 10px;
+            /* border: solid black 2px; */
+            border-radius: 20px;
+            padding: 15px;
+            text-align: left;
+            background-color: var(--dark-blue);
+            margin-bottom: 30px;
+            /* box-shadow: 1px 1px 5px rgb(22, 152, 161); */
+        }
+        
+        .artistGuitar {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+            /* border: solid black 2px; */
+            border-radius: 20px;
+            padding: 5px;
+            text-align: left;
+            font-weight: 600;
+            color: white;
+            /* box-shadow: 1px 1px 5px rgb(22, 152, 161); */
+        }
+        
+        .sousMenu {
+            margin-bottom: 25px;
+        }
+        
+        button,
+        input[type="submit"] {
+            background: none;
+            color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+        }
+        
+        .auth {
+            text-align: center;
+            background-color: var(--link);
+            margin: auto;
+            width: 20%;
+            padding: 25px;
+            border-radius: 25px;
+        }
+        
+        .auth input {
+            border: none;
+            border-radius: 25px;
+            height: 100%;
+            text-align: center;
+            padding: 10px;
+            margin: 5px;
+        }
+        
+        .auth input:focus {
+            outline: none;
+        }
+        /* Affichage dropdown */
+        
+        .dropbtn {
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: var(--dark-blue);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: var(--link);
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .adminTable {
+            width: 60%;
+            margin: auto;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            /* border: solid black 2px; */
+            border-radius: 20px;
+            padding: 25px;
+            background-color: var(--dark-blue);
+            text-align: center;
+            box-shadow: 1px 1px 5px black;
+            border-collapse: collapse;
+            color: var(--white);
+            font-size: large;
+            font-weight: 500;
+        }
+        
+        .adminTable th {
+            /* background-color: var(--link); */
+            padding: 10px;
+            text-align: center;
+            border-bottom: #faf0e6 1px solid;
+        }
+        
+        .adminTable td {
+            padding: 5px;
+        }
+        
+        .adminTable tr:nth-child(even) {
+            background-color: var(--link);
+        }
+        /* Boutton tableau administration */
+        
+        .delete {
+            color: red;
+            cursor: pointer;
+        }
+        
+        .edit {
+            cursor: pointer;
+        }
+        
+        .ajouter {
+            color: rgba(12, 224, 160, 0.938);
+            cursor: pointer;
+        }
+        /* Modale */
+        
+        .modal {
+            max-height: 70vh;
+            background-color: var(--beige);
+            width: 40%;
+            margin: auto;
+            margin-top: 10%;
+            border-radius: 25px;
+            box-shadow: black 1px 1px 5px;
+            overflow-y: auto;
+        }
+        
+        .modalArticle {
+            max-height: 70vh;
+            background-color: var(--beige);
+            width: 80%;
+            margin: auto;
+            margin-top: 10%;
+            border-radius: 25px;
+            box-shadow: black 1px 1px 5px;
+            overflow-y: auto;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(23, 112, 139, 0.5);
+            z-index: 2;
+        }
+        
+        .adminUpdate {
+            padding: 20px;
+            padding-bottom: 30px;
+        }
+        
+        .formUpdate {
+            background-color: #00515C;
+            color: var(--white);
+            padding: 25px;
+            margin: 20px;
+            text-align: left;
+            border-radius: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .formUpdate input {
+            margin: 10px;
+            text-align: center;
+        }
+        /* Affichage profile */
+        
+        .profil {
+            width: 50%;
+            margin: auto;
+            background-color: var(--white);
+            padding: 25px;
+            text-align: left;
+            border-radius: 25px;
+            margin-bottom: 40px;
+            box-shadow: 1px 1px 5px black;
+        }
+        
+        .tableProfil {
+            border-radius: 20px;
+            /* background-color: rgb(121, 228, 222); */
+            text-align: right;
+            color: black;
+            font-size: large;
+            font-weight: 500;
+        }
+        
+        .tableProfil td {
+            padding: 10px 5px;
+        }
+        
+        .tableProfil tr:first-child {
+            margin-top: 25px;
+        }
+        
+        .tableProfil {
+            padding: 10px;
+        }
+        
+        .tableProfil td:nth-child(even),
+        .tableProfil th:nth-child(even) {
+            text-align: left;
+        }
+        /* Affichage article */
+        
+        .article {
+            width: 60%;
+            background-color: var(--white);
+            margin: auto;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            padding: 20px;
+        }
+        
+        .article h2 {
+            font-size: 50px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .article p {
+            /* font-size: 20px; */
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        
+        .author {
+            text-align: center !important;
+        }
+        /* Barre de recherche */
+        /* .search {
+            margin: auto;
+            margin-bottom: 10px;
+            background-color: #fff;
+        } */
+        
+        .searchAdd {
+            width: 50%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        /* Affichage Groupe */
+        
+        .album a {
+            text-decoration: none;
+            color: var(--white);
+        }
+        
+        .album {
+            margin: 10px;
+        }
