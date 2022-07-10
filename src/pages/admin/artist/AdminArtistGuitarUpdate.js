@@ -22,7 +22,6 @@ const AdminArtistGuitarUpdate = (data) => {
     },[]);
 
     const deleteGuitar = (idSelected) => {
-        /* guitarSelected.data.attributes.guitar_id.data.splice(idSelected, 1); */
         artistSelected.data.attributes.guitar_id.data.splice(idSelected, 1);
         setArtistSelected(artistSelected);
         if (window.confirm("Voulez-vous supprimer cette guitare ?")) { 
@@ -36,7 +35,6 @@ const AdminArtistGuitarUpdate = (data) => {
                 }
             }).then(() => {
                 window.location.reload(false);
-                /* window.location.href = "/admin/artistes"; */
             }
             ).catch(err => {
                 console.log(err);
@@ -58,29 +56,10 @@ const AdminArtistGuitarUpdate = (data) => {
                     }
                 }).then(() => {
                     window.location.reload(false);
-                    /* window.location.href = "/admin/artistes"; */
                 }).catch(err => {
                     console.log(err);
                 });        
         }
-    
-
-    /* const changeArtist = (e) => {
-        setGuitarSelected({
-            ...guitarSelected,
-            data: {
-                ...guitarSelected.data,
-                attributes: {
-                    ...guitarSelected.data.attributes,
-                    artist_id: {
-                        data: {
-                            id: ""
-                        }
-                    }
-                }
-            }
-        });
-    } */
 
     const onSearch = (input) => {
         setAllGuitar({
@@ -140,7 +119,6 @@ const AdminArtistGuitarUpdate = (data) => {
                                     <td>{guitar && guitar.attributes.producer.data && guitar.attributes.producer.data.attributes.name}</td>
                                     <td>{guitar && guitar.attributes.name}</td>
                                     <td>{guitar && guitar.attributes.year}</td>
-                                    {/* <td><FontAwesomeIcon icon={faXmark} className="delete" onClick={()=> {deleteGuitar(guitar.id); setGuitarSelected({...guitarSelected.data.attributes.guitar_id.data[index], id: null})}} /></td> */}
                                     <td><FontAwesomeIcon icon={faXmark} className="delete" onClick={()=> {deleteGuitar(index)}} /></td>
                                 </tr>
                             ))}
@@ -156,7 +134,6 @@ const AdminArtistGuitarUpdate = (data) => {
                             onChange={onSearch}
                             variant="filled"
                             sx={{
-                                /* marginBottom: "5px", */
                                 width: "40%",
                                 backgroundColor: '#faf0e6',
                                 textAlign: 'center',
@@ -173,19 +150,19 @@ const AdminArtistGuitarUpdate = (data) => {
                                     
                                 </tr>
                             </thead>
+                            <tbody >
                                 {allGuitar.curent && allGuitar.curent.map((guitar) =>(
-                                    <tbody key={guitar.id}>
-                                        {!guitar.attributes.producer.data || guitar.attributes.deleted? "":
-                                        <tr className="">
+                                        guitar.attributes.producer.data && !guitar.attributes.deleted && 
+                                        <tr className="" key={guitar.id}>
                                             <td>{guitar.id}</td>
-                                            <td>{guitar.attributes.producer.data? guitar.attributes.producer.data.attributes.name : ""}</td>
+                                            <td>{guitar.attributes.producer.data && guitar.attributes.producer.data.attributes.name}</td>
                                             <td>{guitar.attributes.name}</td>
                                             <td>{guitar.attributes.year}</td>
                                             <td><FontAwesomeIcon icon={faPlusCircle} className="ajouter" onClick={()=>addGuitar(guitar.id)} /></td>
-                                        </tr>}
-                                    </tbody>))
+                                        </tr>
+                                    ))
                                 }
-                            
+                            </tbody>
                         </table>
                     </div>
                 }

@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect} from "react";
 import { Link, useParams } from "react-router-dom";
-import CardAlbum from "../../Components/CardAlbum";
 import Footer from "../../Components/Footer";
 import Navbar from "../../Components/Navbar";
 
@@ -110,10 +109,11 @@ const ShowAlbum = () => {
                 <br />
                 <p>{albumData.songs? albumData.songs.split("\n").map((song, index) => <li key={index} className="song">{song}</li>):""}</p>
                 </div>
+                {localStorage.getItem("token") &&
                     <div className="sousMenu">
                         <a className="classBoutton" onClick={updateAlbum} >Modifier</a>
                         <a onClick={deleteAlbum} className="classBoutton">Supprimer</a>
-                    </div>
+                    </div>}
                </div> 
                :
                 <div>
@@ -138,10 +138,11 @@ const ShowAlbum = () => {
                             <textarea name="songs" id="songs" cols="30" rows="10" defaultValue={albumData.songs} onChange={(e) => setupdateAlbumData({...updateAlbumData, songs: e.target.value})}></textarea>
                         </div>
                     </form>
-                    <div className="sousMenu"><br /> <br /> 
-                    <a onClick={updateAlbum} className="classBoutton">Annuler</a>
-                    <a href={`/albums/${albumId}`} className="classBoutton" onClick={() =>  saveData(updateAlbumData)}>Sauvegarder</a>
-                    </div>
+                    {localStorage.getItem("token") &&
+                        <div className="sousMenu"><br /> <br /> 
+                        <a onClick={updateAlbum} className="classBoutton">Annuler</a>
+                        <a href={`/albums/${albumId}`} className="classBoutton" onClick={() =>  saveData(updateAlbumData)}>Sauvegarder</a>
+                        </div>}
                 </div>}
             <br />
             <Link to={'/albums'} className='classBoutton'>Tous les albums</Link>

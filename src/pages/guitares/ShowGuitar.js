@@ -123,16 +123,15 @@ const ShowGuitar = () => {
                 }
             
             <br /><br />
-            {!update? 
+            {localStorage.getItem('token') && !update && 
             <div className="sousMenu">
                 <a className='classBoutton' onClick={updateGuitar}>Mettre à jour</a>
                 <a className='classBoutton' onClick={deleteGuitar} type="submit" >Supprimer</a>
-            </div>
-            : 
+            </div>}
+            {localStorage.getItem('token') && update &&
             <div className="sousMenu">
             <a className="classBoutton" onClick={updateGuitar}>Annuler</a>
             <a href={`/guitares/${guitarId}`} className="classBoutton" onClick={() => saveData(updateGuitarData)}>Sauvegarder</a>
-            
             </div>}
             <br />
              <Link to={'/guitares'} className='classBoutton'>Toutes les guitares</Link> 

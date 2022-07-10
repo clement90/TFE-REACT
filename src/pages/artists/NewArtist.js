@@ -12,6 +12,7 @@ const NewArtist = () => {
                 name: data.name,
                 first_name: data.first_name,
                 description: data.description,
+                birthday: data.birthday
             }
         }, {
             headers: {
@@ -19,7 +20,7 @@ const NewArtist = () => {
             }
         }).then(function (response) {
             console.log(response);
-        }
+        }   
         ).catch(function (error) {
             console.log(error);
         }

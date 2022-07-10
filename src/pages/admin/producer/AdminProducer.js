@@ -89,7 +89,6 @@ const AdminProducer = () => {
             <div>
                 <Modal
                     isOpen={modalIsOpen}
-                    /* onAfterOpen={afterOpenModal} */
                     onRequestClose={closeModal}
                     className="modal"
                     contentLabel="Modal"
@@ -99,7 +98,6 @@ const AdminProducer = () => {
                 </Modal> 
                 <Modal
                     isOpen={modalIsOpenNew}
-                    /* onAfterOpen={afterOpenModal} */
                     onRequestClose={closeModalNew}
                     className="modal"
                     contentLabel="Modal"
@@ -115,7 +113,6 @@ const AdminProducer = () => {
                     onChange={onSearch}
                     variant="filled"
                     sx={{
-                        /* marginBottom: "2rem", */
                         width: "40%",
                         backgroundColor: '#faf0e6',
                         textAlign: 'center',

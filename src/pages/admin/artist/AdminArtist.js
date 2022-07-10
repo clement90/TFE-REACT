@@ -147,7 +147,6 @@ const onSearch = (input) => {
             <div>
                 <Modal
                     isOpen={modalIsOpen}
-                    /* onAfterOpen={afterOpenModal} */
                     onRequestClose={closeModal}
                     className="modal"
                     contentLabel="Modal"
@@ -157,7 +156,6 @@ const onSearch = (input) => {
                 </Modal>
                 <Modal
                         isOpen={modalIsOpenGuitar}
-                        /* onAfterOpen={afterOpenModal} */
                         onRequestClose={closeModalGuitar}
                         className="modal"
                         contentLabel="Modal"
@@ -167,7 +165,6 @@ const onSearch = (input) => {
                     </Modal>
                 <Modal
                     isOpen={modalIsOpenBand}
-                    /* onAfterOpen={afterOpenModal} */
                     onRequestClose={closeModalBand}
                     className="modal"
                     contentLabel="Modal"
@@ -182,10 +179,8 @@ const onSearch = (input) => {
                     onChange={onSearch}
                     variant="filled"
                     sx={{
-                        /* marginBottom: "2rem", */
                         width: "40%",
                         backgroundColor: '#faf0e6',
-                        /* borderRadius: '20px', */
                         textAlign: 'center',
                     }}
                 />
@@ -195,8 +190,6 @@ const onSearch = (input) => {
                             <th>Id</th>
                             <th>Nom</th>
                             <th>Prenom</th>
-                            {/* <th>Date de naissance</th> */}
-                            {/* <th>Groupe</th> */}
                             <th>Deleted</th>
                             <th>Guitare</th>
                             <th>Groupe</th>
@@ -211,11 +204,6 @@ const onSearch = (input) => {
                                     <td>{artist.id}</td>
                                     <td>{artist.attributes.name}</td>
                                     <td>{artist.attributes.first_name}</td>
-                                    {/* <td>{artist.attributes.birthday}</td> */}
-                                    {/* <td>{artist.attributes.band_id && artist.attributes.band_id.data.length!=0 ?  "oui" : "-"}</td> */}
-                                    {/* <td>{artist.attributes.producer.data? artist.attributes.producer.data.attributes.name : ""}</td>
-                                    <td>{artist.attributes.name}</td>
-                                    <td>{artist.attributes.Year}</td> */}
                                     <td>{artist.attributes.deleted? "oui" : "non"}</td>
                                     <td><FontAwesomeIcon icon={faGuitar} className="edit" onClick={()=>openModalGuitar(artist)}/></td>
                                     <td><FontAwesomeIcon icon={faPeopleGroup} className="edit" onClick={()=>openModalBand(artist)} /></td>

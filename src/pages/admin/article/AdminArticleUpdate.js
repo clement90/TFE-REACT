@@ -15,6 +15,10 @@ const AdminArticleUpdate = (article) => {
                 article: articleSelected.article,
                 deleted: articleSelected.deleted,
             }
+        },{
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem("token")
+            }
         })
         .then((reponse) => {
             console.log(reponse);

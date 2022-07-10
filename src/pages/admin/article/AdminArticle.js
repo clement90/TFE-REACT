@@ -106,7 +106,6 @@ const AdminArticle = () => {
             <div>
                 <Modal
                     isOpen={modalIsOpen}
-                    /* onAfterOpen={afterOpenModal} */
                     onRequestClose={closeModal}
                     className="modalArticle"
                     contentLabel="Modal"
@@ -116,7 +115,6 @@ const AdminArticle = () => {
                 </Modal>
                 <Modal
                     isOpen={modalIsOpenNew}
-                    /* onAfterOpen={afterOpenModal} */
                     onRequestClose={closeModalNew}
                     className="modalArticle"
                     contentLabel="Modal"
@@ -132,10 +130,8 @@ const AdminArticle = () => {
                     onChange={onSearch}
                     variant="filled"
                     sx={{
-                        /* marginBottom: "2rem", */
                         width: "40%",
                         backgroundColor: '#faf0e6',
-                        
                         textAlign: 'center',
                     }}
                 />
@@ -168,11 +164,10 @@ const AdminArticle = () => {
                     </tbody>
                 </table>
             </div> : window.location.href = "/"}
-
          <Footer></Footer> 
     </div>
     ); 
     
-    }
+}
 
-    export default AdminArticle;
+export default AdminArticle;

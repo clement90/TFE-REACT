@@ -12,6 +12,10 @@ const AdminArticleNew = () => {
                 author: localStorage.getItem("id")
 
             }
+        },{
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem("token")
+            }
         })
         .then((reponse) => {
             console.log(reponse);
@@ -25,7 +29,7 @@ const AdminArticleNew = () => {
     
     return (
         <div className="center adminUpdate">
-            <h2 className="title">Editer</h2>
+            <h2 className="title">Ajouter</h2>
             <form className="formUpdate">
                 <div>
                     <label htmlFor="nom">Titre : </label>

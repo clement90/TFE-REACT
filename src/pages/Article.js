@@ -31,8 +31,6 @@ const Article =() =>{
         </div>)
         )
     }
-    
-    
     <Footer></Footer>
 </div>
 );

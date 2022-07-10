@@ -37,9 +37,7 @@ const AdminArtistBandUpdate =(data) =>{
                     Authorization: "Bearer " + localStorage.getItem("token")
                 }
             }).then(() => {
-                window.location.reload(false);
-                /* window.location.href = "/admin/artistes"; */
-            }
+                window.location.reload(false);            }
             ).catch(err => {
                 console.log(err);
             }
@@ -60,7 +58,6 @@ const AdminArtistBandUpdate =(data) =>{
                 }
             }).then(() => {
                 window.location.reload(false);
-                /* window.location.href = "/admin/artistes"; */
             }).catch(err => {
                 console.log(err);
             });

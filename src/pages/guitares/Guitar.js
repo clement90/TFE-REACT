@@ -7,35 +7,16 @@ import { TextField } from '@mui/material';
 
 const Guitar =() =>{
     const [guitarData, setGuitarData] = useState([]);
-    /* const [producer, setProducer] = useState([]); */
-    
 
     useEffect(() =>{
         axios.get(`http://localhost:1337/api/guitars?sort=producer.name&sort=name&populate=producer`)
         .then((reponse) =>{
             setGuitarData({initial: reponse.data.data, curent: reponse.data.data});
-            
-            
         })
         .catch(err =>{
             console.log(err)
         })
     },[]);
-
-    /* useEffect(() =>{
-        axios.get(`http://localhost:1337/api/producers?sort=name&populate=%2A`)
-        .then((reponse) =>{
-            setProducer(reponse.data.data);
-            
-            
-        })
-        .catch(err =>{
-            console.log(err)
-        })
-    },[]); */
-
-/* console.log(guitarData); */
-/* console.log(producer); */
 
 const onSearch = (input) => {
     setGuitarData({
@@ -44,7 +25,7 @@ const onSearch = (input) => {
         if (input.target.value === "") {
           return element;
         } else {
-          let nameCheck = false;
+          let nameCheck = false;    
           let yearCheck = false;
           let producerCheck = false;
           if (element.attributes.name) {
@@ -72,7 +53,6 @@ const onSearch = (input) => {
     <div className='App'>
 
         <Navbar></Navbar>
-        {/* <input type="text" placeholder="Search" /> */}
         <h1 className='title'>Toutes les guitares</h1>
         
             <div className='searchAdd'>
@@ -86,7 +66,6 @@ const onSearch = (input) => {
                     marginBottom: "1rem",
                     width: "40%",
                     backgroundColor: '#faf0e6',
-                    /* borderRadius: '20px', */
                     textAlign: 'center',
                 }}
             />
@@ -96,23 +75,9 @@ const onSearch = (input) => {
         <ul>
             {
                 guitarData.curent && guitarData.curent.map((guitar) =>(<Link to={`/guitares/${guitar.id}`} className="lienGuitare" key={guitar.id}>{!guitar.attributes.deleted && <li className='listShowArtist guitare'  >{guitar.attributes.producer.data? guitar.attributes.producer.data.attributes.name : ""} {guitar.attributes.name} {guitar.attributes.year}</li>}</Link>))
-                /* guitarData.map((guitar) =>(<li className='listShowArtist' key={guitar.id} >{guitar.attributes.producer.data.attributes.name}</li>)) */
             }
         </ul> 
-        </div>   
-       {/*  <ul>
-            {
-                producer.map((producer) =>(<li className='listShowArtist' key={producer.attributes.guitars.data.map((guitar) =>(console.log(guitar.id)))} >{producer.attributes.name}{producer.attributes.guitars.data.map((guitar) =>(guitar.attributes.name))}</li>))
-                producer.map((producer) =>
-                    (<li className='listShowArtist' key={producer.id} >
-
-                        {producer.attributes.guitars.data.map((guitar) =>(<li className='listShowArtist' key={guitar.id} > {producer.attributes.name}{guitar.attributes.name}</li>))}
-                        
-                        </li>))
-            }
-
-        </ul> */}
-
+        </div>
         <Footer></Footer>
     </div>
     );

@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './pages/Home';
-/* import List from './pages/List'; */
-/* import Favoris from './pages/Favoris'; */
 import Artists from './pages/artists/Artists';
 import Numero from './pages/Numero';
 import Article from './pages/Article';

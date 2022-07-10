@@ -28,23 +28,17 @@ const Album =() =>{
             } else {
               let titleCheck = false;
               let bandCheck = false;
-              /* let producerCheck = false; */
               if (element.attributes.title) {
                 titleCheck = element.attributes.title
                   .toLowerCase()
                   .includes(input.target.value.toLowerCase());
               }
-              /* if (element.attributes.year) {
-                yearCheck = element.attributes.year
-                    .toString()
-                    .includes(input.target.value.toLowerCase());
-              } */
               if (element.attributes.band.data) {
                     bandCheck = element.attributes.band.data.attributes.name
                     .toLowerCase()
                     .includes(input.target.value.toLowerCase());
                 }
-              return titleCheck /* || yearCheck */ || bandCheck;
+              return titleCheck || bandCheck;
             }
           }),
         });
@@ -75,7 +69,6 @@ const Album =() =>{
                 {
                     albumData.curent && albumData.curent.map((album) =>(<Link to={`/albums/${album.id}`} className="lienGuitare" key={album.id}>{album.attributes.deleted!=true?<li className='listShowArtist guitare'  >{album.attributes.band.data? album.attributes.band.data.attributes.name : ""} {album.attributes.title}</li>:"" }
                     </Link>))
-                    /* guitarData.map((guitar) =>(<li className='listShowArtist' key={guitar.id} >{guitar.attributes.producer.data.attributes.name}</li>)) */
                 }
             </ul> 
         </div>

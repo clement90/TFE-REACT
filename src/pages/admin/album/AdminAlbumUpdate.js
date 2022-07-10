@@ -16,9 +16,7 @@ const AdminAlbumUpdate = (album) => {
         })
     },[]);
 
-    const saveData = (e) => {
-        e.preventDefault();
-        /* alert(parseInt(updateAlbum.band)); */
+    const saveData = () => {
         axios.put(`http://localhost:1337/api/albums/${album.album.id}`, {
             data: {
                 title: updateAlbum.title,

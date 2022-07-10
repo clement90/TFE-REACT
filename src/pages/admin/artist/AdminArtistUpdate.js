@@ -5,14 +5,6 @@ const AdminArtistUpdate = (artist) => {
     const [updateArtist, setUpdateArtist] = useState(artist.artist.attributes);
     const [allProducer, setAllProducer] = useState([]);
 
-    /* useEffect (() => {
-        axios.get(`http://localhost:1337/api/producers?sort=name`).then((reponse) =>{
-            setAllProducer(reponse.data.data);
-        }).catch(err =>{
-            console.log(err)
-        })
-    },[]); */
-
     const saveData = () => {
         
         axios.put(`http://localhost:1337/api/artists/${artist.artist.id}`, {
@@ -41,13 +33,6 @@ const AdminArtistUpdate = (artist) => {
         <div className="center adminUpdate">
             <h2 className="title">Editer</h2>
             <form className="formUpdate">
-                {/* <div>
-                    <label htmlFor="producer">Fabricant : </label>
-                    <select name="producer" id="producer" defaultValue={updateGuitar.producer && updateGuitar.producer.data!=null && updateGuitar.producer.data.id} onChange={(e) => setUpdateGuitar({...updateGuitar, producer: e.target.value})}>
-                        <option value="" disabled hidden selected>Choisir un fabricant</option>
-                        {allProducer.map((producer) => producer.id && <option key={producer.id} value={producer.id} selected={updateGuitar.producer.data!=null && updateGuitar.producer.data.id &&  producer.id == updateGuitar.producer.data.id}>{producer.attributes.name}</option>)}
-                    </select>
-                </div> */}
                 <div>
                     <label htmlFor="nom">Nom : </label>
                     <input type="text" name="nom" id="nom" defaultValue={updateArtist.name} onChange={(e) => setUpdateArtist({...updateArtist, name: e.target.value})}/>

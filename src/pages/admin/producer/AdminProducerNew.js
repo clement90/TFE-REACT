@@ -25,8 +25,6 @@ const AdminProducerNew = () => {
         );
     }
 
-
-
     return (
         <div className="center adminUpdate">
             <h2 className="title">Ajouter un fabricant</h2>

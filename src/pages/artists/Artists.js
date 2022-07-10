@@ -73,7 +73,6 @@ const Artists = () => {
                   marginBottom: "1rem",
                   width: "40%",
                   backgroundColor: '#faf0e6',
-                  /* borderRadius: '20px', */
                   textAlign: 'center',
                 }}
             />
@@ -86,7 +85,6 @@ const Artists = () => {
                     return !artist.attributes.deleted && <Card key={artist.id} artist={artist} />
                 }
                 )
-                /* artistsData.map((artist) =>( <Card key={artist.id} artist={artist}/>)) */
             }
         </ul>
           

@@ -57,13 +57,8 @@ const UpdateProfil = (user) => {
             </form>
             <button  className="classBoutton" onClick={saveData}>Sauvegarder</button>
             <button className="classBoutton" onClick={deleteUser}>Supprimer</button>
-
-             
-            
         </div>
     );
 }
-
-
 
 export default UpdateProfil;

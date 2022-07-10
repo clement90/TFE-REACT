@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Footer from "../../../Components/Footer";
 import Navbar from "../../../Components/Navbar";
-import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import AdminBandUpdate from "./AdminBandUpdate";
 import { useEffect } from "react";
@@ -17,7 +16,6 @@ const AdminBand = () => {
     
 
     Modal.setAppElement('#root');
-    /* let subtitle; */
     const [modalIsOpen, setIsOpen] = useState(false);
 
     function openModal(band) {
@@ -84,7 +82,6 @@ const AdminBand = () => {
             <div>
                 <Modal
                     isOpen={modalIsOpen}
-                    /* onAfterOpen={afterOpenModal} */
                     onRequestClose={closeModal}
                     className="modal"
                     contentLabel="Modal"
@@ -99,7 +96,6 @@ const AdminBand = () => {
                     onChange={onSearch}
                     variant="filled"
                     sx={{
-                        /* marginBottom: "2rem", */
                         width: "40%",
                         backgroundColor: '#faf0e6',
                         textAlign: 'center',

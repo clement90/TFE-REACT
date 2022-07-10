@@ -95,12 +95,12 @@ const ShowBand = () => {
                 </form>
             </div>}
             <br /><br />
-            {!update? 
+            {localStorage.getItem('token') && !update && 
             <div className="sousMenu">
                 <a className='classBoutton' onClick={updateBand}>Mettre à jour</a>
                 <a className='classBoutton' onClick={deleteBand} type="submit" >Supprimer</a>
-            </div>
-            : 
+            </div>}
+            {localStorage.getItem('token') && update && 
             <div className="sousMenu">
             <a className="classBoutton" onClick={updateBand}>Annuler</a>
             <a href={`/groupes/${bandId}`} className="classBoutton" onClick={() => saveData(bandData)}>Sauvegarder</a>

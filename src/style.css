@@ -3,18 +3,31 @@
 #74A2A8
 #1893A3
 
-
+ :root {
+            --dark-blue: #00515C;
+            --gradient: linear-gradient(180deg, rgba(24, 147, 163, 1) 5%, rgba(0, 81, 92, 1) 95%);
+            /* rgb(16, 46, 85) 
+        
+        --white: #faf0e6;
+        --link: #1893A3;
+        --beige: #a68a74;
+        --back-light: #ADF5FF;
+        /* --beige: #E8CEE4; 
+        /* #74A2A8; 
+        }
 
 */
         
          :root {
-            --dark-blue: #00515C;
+            --dark-blue: #216869;
             --gradient: linear-gradient(180deg, rgba(24, 147, 163, 1) 5%, rgba(0, 81, 92, 1) 95%);
             /* rgb(16, 46, 85) */
-            --white: #faf0e6;
-            --link: #1893A3;
-            --beige: #a68a74;
-            --back-light: #ADF5FF;
+            --white: #9CC5A1;
+            --link: #49A078;
+            --beige: #DCE1DE;
+            --back-light: #9CC5A1;
+            --dark-green: #1F2421;
+            --color-edit: rgb(202, 226, 220);
             /* --beige: #E8CEE4; */
             /* #74A2A8; */
         }
@@ -37,9 +50,9 @@
         }
         
         .title {
-            color: white;
+            color: var(--dark-blue);
             /* text-shadow: #1893A3 2px 2px 10px; */
-            text-shadow: black 2px 2px 10px;
+            text-shadow: var(--back-light) 2px 2px 10px;
         }
         
         .navigation {
@@ -65,7 +78,7 @@
             display: flex;
             justify-content: space-between;
             background-color: var(--dark-blue);
-            background: linear-gradient(180deg, rgba(24, 147, 163, 1) 5%, rgba(0, 81, 92, 1) 95%);
+            /* background: linear-gradient(180deg, rgba(24, 147, 163, 1) 5%, rgba(0, 81, 92, 1) 95%); */
         }
         
         .home {
@@ -153,7 +166,7 @@
         
         .listShowArtist a {
             text-decoration: none;
-            color: white;
+            color: var(--link);
         }
         
         .showArtistGroup a {
@@ -221,8 +234,7 @@
             padding: 35px;
             align-items: center;
             background-color: var(--dark-blue);
-            background: linear-gradient(180deg, rgba(0, 81, 92, 1) 5%, rgba(0, 81, 92, 1) 5%, rgba(24, 147, 163, 1) 95%);
-            ;
+            /* background: linear-gradient(180deg, rgba(0, 81, 92, 1) 5%, rgba(0, 81, 92, 1) 5%, rgba(24, 147, 163, 1) 95%); */
             color: white;
         }
         
@@ -361,11 +373,11 @@
             /* border: solid black 2px; */
             border-radius: 20px;
             padding: 25px;
-            background-color: var(--dark-blue);
+            background-color: var(--white);
             text-align: center;
             box-shadow: 1px 1px 5px black;
             border-collapse: collapse;
-            color: var(--white);
+            color: var(--dark-green);
             font-size: large;
             font-weight: 500;
         }
@@ -393,10 +405,11 @@
         
         .edit {
             cursor: pointer;
+            color: var(--color-edit);
         }
         
         .ajouter {
-            color: rgba(12, 224, 160, 0.938);
+            color: var(--beige);
             cursor: pointer;
         }
         /* Modale */

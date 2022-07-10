@@ -15,7 +15,6 @@ const AdminGuitar = () => {
     const [guitar, setGuitar] = useState([]);
     const [guitarSelected, setGuitarSelected] = useState();
     
-
     Modal.setAppElement('#root');
   
     const [modalIsOpen, setIsOpen] = useState(false);
@@ -93,7 +92,6 @@ const AdminGuitar = () => {
             <Navbar></Navbar>
             <Modal
                     isOpen={modalIsOpen}
-                    /* onAfterOpen={afterOpenModal} */
                     onRequestClose={closeModal}
                     className="modal"
                     contentLabel="Modal"
@@ -111,7 +109,6 @@ const AdminGuitar = () => {
                 onChange={onSearch}
                 variant="filled"
                 sx={{
-                    /* marginBottom: "2rem", */
                     width: "40%",
                     backgroundColor: '#faf0e6',
                     textAlign: 'center',

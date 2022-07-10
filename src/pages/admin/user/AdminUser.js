@@ -18,18 +18,13 @@ const AdminUser = () =>{
     
     /* Modal */
     Modal.setAppElement('#root');
-  /*   let subtitle; */
+ 
     const [modalIsOpen, setIsOpen] = useState(false);
 
     function openModal(user) {
         setIsOpen(true);
         setUserSelected(user);
     }
-
-    /* function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        subtitle.style.color = '#f00';
-    } */
 
     function closeModal() {
         setIsOpen(false);
@@ -94,7 +89,6 @@ const AdminUser = () =>{
         <Navbar></Navbar>
         <Modal
                     isOpen={modalIsOpen}
-                    /* onAfterOpen={afterOpenModal} */
                     onRequestClose={closeModal}
                     className="modal"
                     contentLabel="Modal"
@@ -112,7 +106,6 @@ const AdminUser = () =>{
                 onChange={onSearch}
                 variant="filled"
                 sx={{
-                   /*  marginBottom: "2rem", */
                     width: "40%",
                     backgroundColor: '#faf0e6',
                     textAlign: 'center',

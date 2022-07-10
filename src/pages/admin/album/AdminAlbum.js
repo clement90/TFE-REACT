@@ -17,7 +17,7 @@ const AdminAlbum = () => {
     const date = new Date();
 
     Modal.setAppElement('#root');
-    /* let subtitle; */
+
     const [modalIsOpen, setIsOpen] = useState(false);
 
     function openModal(album) {
@@ -94,7 +94,6 @@ const AdminAlbum = () => {
             <Navbar></Navbar>
             <Modal
                     isOpen={modalIsOpen}
-                    /* onAfterOpen={afterOpenModal} */
                     onRequestClose={closeModal}
                     className="modal"
                     contentLabel="Modal"
@@ -112,7 +111,6 @@ const AdminAlbum = () => {
                 onChange={onSearch}
                 variant="filled"
                 sx={{
-                    /* marginBottom: "1rem", */
                     width: "40%",
                     backgroundColor: '#faf0e6',
                     textAlign: 'center',

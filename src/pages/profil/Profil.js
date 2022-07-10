@@ -48,7 +48,6 @@ const Profil = () => {
         <div className="App">
             <Modal
                     isOpen={modalIsOpen}
-                    /* onAfterOpen={afterOpenModal} */
                     onRequestClose={closeModal}
                     className="modal"
                     contentLabel="Modal"
@@ -58,7 +57,6 @@ const Profil = () => {
                 </Modal>
                 <Modal
                     isOpen={modalIsOpen2}
-                    /* onAfterOpen={afterOpenModal} */
                     onRequestClose={closeModal2}
                     className="modal"
                     contentLabel="Modal"

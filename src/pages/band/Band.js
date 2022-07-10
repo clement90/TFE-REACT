@@ -51,7 +51,6 @@ const Band =() =>{
                     marginBottom: "1rem",
                     width: "40%",
                     backgroundColor: '#faf0e6',
-                    /* borderRadius: '20px', */
                     textAlign: 'center',
                 }}
                 />

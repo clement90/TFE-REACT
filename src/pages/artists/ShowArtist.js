@@ -12,57 +12,56 @@ import AdminArtistBandUpdate from '../admin/artist/AdminArtistBandUpdate';
 
 
 const ShowArtists = () => {
-    const { artistId } = useParams();
-    const [artistData, setArtistData] = useState([]);
-    const [update, setUpdate] = useState(false);
+  const { artistId } = useParams();
+  const [artistData, setArtistData] = useState([]);
+  const [update, setUpdate] = useState(false);
 
-    const [guitar, setGuitar] = useState([]);
-    const [band, setBand] = useState([]);
-    Modal.setAppElement('#root');
-  
-  /* Modale guitare */
+  const [guitar, setGuitar] = useState([]);
+  const [band, setBand] = useState([]);
+  Modal.setAppElement('#root');
 
-    const [modalIsOpenGuitar, setIsOpenGuitar] = useState(false);
+/* Modale guitare */
 
-    function openModalGuitar() {
-        setIsOpenGuitar(true);
-        setGuitar(artistData);
-    }
+  const [modalIsOpenGuitar, setIsOpenGuitar] = useState(false);
 
-    function closeModalGuitar() {
-        setIsOpenGuitar(false);
-    }
+  function openModalGuitar() {
+      setIsOpenGuitar(true);
+      setGuitar(artistData);
+  }
 
-    /* Modale band */
+  function closeModalGuitar() {
+      setIsOpenGuitar(false);
+  }
 
-    const [modalIsOpenBand, setIsOpenBand] = useState(false);
+  /* Modale band */
 
-    function openModalBand() {
-        setIsOpenBand(true);
-        setBand(artistData);
-    }
+  const [modalIsOpenBand, setIsOpenBand] = useState(false);
 
-    function closeModalBand() {
-        setIsOpenBand(false);
-    }
+  function openModalBand() {
+      setIsOpenBand(true);
+      setBand(artistData);
+  }
+
+  function closeModalBand() {
+      setIsOpenBand(false);
+  }
    
 //Permet de récupérer 2 populates
 
-const qs = require('qs');
-const query = qs.stringify({
-  populate: {
-    band_id: {
-        fields: ['name'],
-        populate : ['albums']
-    },
-    guitar_id: {
-      populate: ['producer'],
-    }
-    
-  } 
-}, {
-  encodeValuesOnly: true,
-});
+  const qs = require('qs');
+  const query = qs.stringify({
+    populate: {
+      band_id: {
+          fields: ['name'],
+          populate : ['albums']
+      },
+      guitar_id: {
+        populate: ['producer'],
+      } 
+    } 
+  }, {
+    encodeValuesOnly: true,
+  });
 
 //Utilisation de query dans la requête pour récupérer les 2 populates
 
@@ -123,13 +122,12 @@ const query = qs.stringify({
         }).catch(err =>{
             console.log(err)
         })
-}
+  }
 
     return ( 
     <div className='App'>
       <Modal
                         isOpen={modalIsOpenGuitar}
-                        /* onAfterOpen={afterOpenModal} */
                         onRequestClose={closeModalGuitar}
                         className="modal"
                         contentLabel="Modal"
@@ -139,7 +137,6 @@ const query = qs.stringify({
                     </Modal>
                 <Modal
                     isOpen={modalIsOpenBand}
-                    /* onAfterOpen={afterOpenModal} */
                     onRequestClose={closeModalBand}
                     className="modal"
                     contentLabel="Modal"
@@ -151,7 +148,6 @@ const query = qs.stringify({
       {!update?
       <div>
         <h1 className='title'>{artistData.attributes && artistData.attributes.first_name} {artistData.attributes && artistData.attributes.name}</h1>
-        {/* <p>({artistData.attributes && artistData.attributes.birthday})</p> */}
         <h2 className='title'>{artistData.attributes && artistData.attributes.band_id && artistData.attributes.band_id.data!=0? artistData.attributes.band_id.data.map((groupe) =>(<li className='listShowArtist' key={groupe.id} ><Link to={`/groupes/${groupe.id}`} >{groupe.attributes.name}</Link></li>)) : "Pas de groupe associé"}</h2>
         <div className='description'>
           <p>{artistData.attributes && artistData.attributes.description? artistData.attributes.description : "Il n'y a pas encore de description"}</p>
@@ -190,12 +186,12 @@ const query = qs.stringify({
       </div>}
       <br />
       <br />
-      {!update? 
+      {localStorage.getItem('token') && !update && 
             <div className="sousMenu">
                 <a className='classBoutton' onClick={updateArtist}>Mettre à jour</a>
                 <a className='classBoutton' onClick={deleteArtist} type="submit" >Supprimer</a>
-            </div>
-            : 
+            </div>}
+      {localStorage.getItem('token') && update &&   
             <div className="sousMenu">
             <a className="classBoutton" onClick={updateArtist}>Annuler</a>
             <a href={`/artists/${artistId}`} className="classBoutton" onClick={() => saveData(artistData)}>Sauvegarder</a>
