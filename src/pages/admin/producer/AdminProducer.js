@@ -48,12 +48,12 @@ const AdminProducer = () => {
 
     const deleteProducer = (id) => {
         if (window.confirm("Voulez-vous supprimer ce Producteur ?")) {
-            axios.delete(`localhost:3000/api/producer/${id}`, {
+            axios.delete(`http://localhost:1337/api/producers/${id}`, {
                 headers: {
                     Authorization: "Bearer " + localStorage.getItem("token")
                 }
             }).then(() => {
-                window.location.href = "/admin/producer";
+                window.location.href = "/admin/fabricants";
             }).catch(err => {
                 console.log(err);
             });

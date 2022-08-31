@@ -62,8 +62,12 @@ const AdminArticle = () => {
     }
 
     const deleteArticle = (id) => {
-        if(window.confirm("Voulez-vous supprimer ce guitariste ?")){
-            axios.delete(`http://localhost:1337/api/articles/${id}`)
+        if(window.confirm("Voulez-vous supprimer cet article ?")){
+            axios.delete(`http://localhost:1337/api/articles/${id}`,{
+                headers : {
+                    Authorization: "Bearer " + localStorage.getItem("token")
+                }
+            })
             .then((reponse) => {
                 console.log(reponse);
                 window.location.href = "/admin/articles";

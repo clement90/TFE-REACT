@@ -22,8 +22,6 @@ const AdminArtistBandUpdate =(data) =>{
         })
     },[]);
 
-  
-
     const deleteBand = (idSelected) =>{
         artistSelected.data.attributes.band_id.data.splice(idSelected, 1);
         setArtistSelected(artistSelected);

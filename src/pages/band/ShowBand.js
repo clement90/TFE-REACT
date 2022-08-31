@@ -52,11 +52,10 @@ const ShowBand = () => {
     const deleteBand = () => {
         if(window.confirm("Voulez-vous supprimer ce groupe ?")){
             axios.put(`http://localhost:1337/api/bands/${bandId}`,{
-                headers: {
-                    Authorization: "Bearer " + localStorage.getItem("token")
-                },
                 data: {
                     deleted: true
+                }},{headers: {
+                    Authorization: "Bearer " + localStorage.getItem("token")
                 }
             }
             )

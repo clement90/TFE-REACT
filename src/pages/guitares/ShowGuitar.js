@@ -21,11 +21,10 @@ const ShowGuitar = () => {
     const deleteGuitar = (e) => {
         if(window.confirm("Voulez-vous supprimer cette guitare ?")){
             axios.put(`http://localhost:1337/api/guitars/${guitarId}`,{
-                headers: {
-                    Authorization: "Bearer " + localStorage.getItem("token")
-                },
                 data: {
                     deleted: true
+                }},{headers: {
+                    Authorization: "Bearer " + localStorage.getItem("token")
                 }
             }
             )

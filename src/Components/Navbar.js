@@ -52,7 +52,7 @@ const Navbar = () =>{
         <nav>
         <ul className="navigation">
             <NavLink to="/" className={(nav) => (nav.isActive ? "selected" :"notselected")}>
-            <li>Home</li></NavLink>
+            <li>Accueil</li></NavLink>
             <NavLink to="/artists" className={(nav) => (nav.isActive ? "selected" :"notselected")}>
             <li>Artistes</li></NavLink>
             <NavLink to="/groupes" className={(nav) => (nav.isActive ? "selected" :"notselected")}>
@@ -85,7 +85,7 @@ const Navbar = () =>{
                             <NavLink to="/admin/groupes" className={(nav) => (nav.isActive ? "selected" :"notselected")}>Groupes</NavLink>
                             <NavLink to="/admin/guitares" className={(nav) => (nav.isActive ? "selected" :"notselected")}>Guitares</NavLink>
                             <NavLink to="/admin/fabricants" className={(nav) => (nav.isActive ? "selected" :"notselected")}>Fabricants</NavLink>
-                            <NavLink to="/admin/numero" className={(nav) => (nav.isActive ? "selected" :"notselected")}>Numéros de série</NavLink>
+                            {/* <NavLink to="/admin/numero" className={(nav) => (nav.isActive ? "selected" :"notselected")}>Numéros de série</NavLink> */}
                             <NavLink to="/admin/articles" className={(nav) => (nav.isActive ? "selected" :"notselected")}>Articles</NavLink>
                             <NavLink to="/admin/users" className={(nav) => (nav.isActive ? "selected" :"notselected")}>Utilisateurs</NavLink>
                         </div>
@@ -96,7 +96,7 @@ const Navbar = () =>{
                         <i className="fa fa-caret-down"></i>
                     </button>
                     <div className="dropdown-content" id="myDropdown2">
-                    <NavLink to="/profile" className={(nav) => (nav.isActive ? "selected" :"notselected")}>Profile</NavLink>
+                    <NavLink to="/profile" className={(nav) => (nav.isActive ? "selected" :"notselected")}>Profil</NavLink>
                         <NavLink to="/" className="notselected" onClick={logoff}>
                 Déconnexion</NavLink>
                     </div>

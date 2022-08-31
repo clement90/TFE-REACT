@@ -11,7 +11,7 @@ const Home = () => {
             <Navbar />
             <h1 className='title'>La mine du guitariste</h1>
             <div className='home'>
-                <h2>Bienvenu sur la mine du guitarise!</h2>
+                <h2>Bienvenue sur la mine du guitarise!</h2>
                 <br />
                 <p> 
                 Vous trouverez sur ce site des informations concernant les guitaristes célèbres ainsi que sur leur matériel.

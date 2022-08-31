@@ -49,7 +49,7 @@ const Album =() =>{
         <Navbar></Navbar>
         <h1 className='title'>Tous les albums</h1>
         <div className='searchAdd'>
-                <TextField
+              <TextField
                 name="filter"
                 fullWidth
                 label="Rechercher un album"
@@ -61,7 +61,7 @@ const Album =() =>{
                     backgroundColor: '#faf0e6',
                     textAlign: 'center',
                 }}
-            />
+              />
             {localStorage.getItem("token") && <Link to={`/albums/new`} className="bouttonAjouter">Ajouter un album</Link>}
         </div>
         <div className='blocGuitar'>

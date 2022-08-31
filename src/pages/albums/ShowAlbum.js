@@ -32,11 +32,10 @@ const ShowAlbum = () => {
     const deleteAlbum = (e) => {
         if(window.confirm("Voulez-vous supprimer cet album ?")){
             axios.put(`http://localhost:1337/api/albums/${albumId}`, {
-                headers: {
-                    Authorization: "Bearer " + localStorage.getItem("token")
-                },
                 data: {
                     deleted: true
+                }},{headers: {
+                    Authorization: "Bearer " + localStorage.getItem("token")
                 }
             })
             .then(() =>{

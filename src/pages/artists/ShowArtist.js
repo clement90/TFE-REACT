@@ -86,14 +86,15 @@ const ShowArtists = () => {
   }
   
   const deleteArtist = () => {
+    console.log(localStorage.getItem("token"))
     if(window.confirm("Voulez-vous supprimer cet artiste ?")){
       axios.put(`http://localhost:1337/api/artists/${artistId}`,{
-          headers: {
-              Authorization: "Bearer " + localStorage.getItem("token")
-          },
           data: {
               deleted: true
+          }},{headers: {
+              Authorization: "Bearer " + localStorage.getItem("token")
           }
+          
       }
       )
       .then(() =>{
@@ -167,9 +168,9 @@ const ShowArtists = () => {
             <input type="text" name="name" id="name" defaultValue={artistData.attributes.name} onChange={(e) => setArtistData({...artistData, name: e.target.value})} />
           </div>
           <div>
-                    <label htmlFor="birthday">Date de naissance : </label>
-                    <input type="date" name="birthday" id="birthday" defaultValue={artistData.attributes.birthday} onChange={(e) => setArtistData({...artistData, birthday: e.target.value})}/>
-                </div>
+            <label htmlFor="birthday">Date de naissance : </label>
+            <input type="date" name="birthday" id="birthday" defaultValue={artistData.attributes.birthday} onChange={(e) => setArtistData({...artistData, birthday: e.target.value})}/>
+          </div>
           <div>
             <label htmlFor="description">Description : </label>
             <textarea name="description" id="description" defaultValue={artistData.attributes.description} cols="30" rows="10" onChange={(e) => setArtistData({...artistData, description: e.target.value})} />
@@ -188,16 +189,16 @@ const ShowArtists = () => {
       <br />
       {localStorage.getItem('token') && !update && 
             <div className="sousMenu">
-                <a className='classBoutton' onClick={updateArtist}>Mettre à jour</a>
-                <a className='classBoutton' onClick={deleteArtist} type="submit" >Supprimer</a>
+              <a className='classBoutton' onClick={updateArtist}>Mettre à jour</a>
+              <a className='classBoutton' onClick={deleteArtist} type="submit" >Supprimer</a>
             </div>}
       {localStorage.getItem('token') && update &&   
             <div className="sousMenu">
-            <a className="classBoutton" onClick={updateArtist}>Annuler</a>
-            <a href={`/artists/${artistId}`} className="classBoutton" onClick={() => saveData(artistData)}>Sauvegarder</a>
+              <a className="classBoutton" onClick={updateArtist}>Annuler</a>
+              <a href={`/artists/${artistId}`} className="classBoutton" onClick={() => saveData(artistData)}>Sauvegarder</a>
             </div>}
             <br />
-             <Link to={'/artists'} className='classBoutton'>Tout les groupes</Link>
+             <Link to={'/artists'} className='classBoutton'>Tout les artistes</Link>
       <Footer></Footer>
     </div>
 );
